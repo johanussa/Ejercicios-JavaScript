@@ -1,0 +1,52 @@
+body {
+    background: -webkit-radial-gradient(rgb(255, 70, 70), rgb(0, 0, 0));
+    color: #fff;
+    height: calc(100vh - 29px);
+    text-align: center;
+    position: relative;
+}
+h1 {
+    margin-bottom: -10px;
+}
+.canvas-space #space-draw {
+    border: 5px double black;
+    box-shadow: 3px 3px 20px rgb(0, 0, 0);
+    position: absolute;
+    top: 100;
+    left: 10px;
+    background-color: #fff;
+}
+.contain-menu {
+    width: 300px;
+    height: 350px;
+    position: absolute;
+    top: 150px;
+    left: 1040px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.contain-set {
+    margin-bottom: 25px;
+    text-align: left;
+}
+.contain-menu h2 {
+    margin-bottom: 40px;
+}
+.contain-set button {
+    width: 130px;
+    padding: 5px;
+    margin: 0 auto 20px;
+    border: 2px outset gray;
+    border-radius: 520px;
+    font-weight: 500;
+    display: block;
+}
+.contain-set button:hover {
+    border: 2px outset black;
+    background-color: rgb(186, 0, 0);
+    color: #fff;
+}
+.contain-menu label, input {
+    padding-right: 10px;
+    vertical-align: middle;
+}

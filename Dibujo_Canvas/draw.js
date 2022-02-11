@@ -39,14 +39,13 @@ function drawStar() {
         drawLine(color1, (line * 10), 0, (lineas * 10), ((line +1) * 10)); 
 
         if (((lineas * 10) / 2) - ((line + 1) * 10) >= -5 ) {
-
             drawLine(color3, (line * 10), (lineas * 10) / 2, (lineas * 10) / 2, 
                 ((lineas * 10) / 2) - ((line + 1) * 10));
             drawLine(color3, ((lineas * 10) / 2), ((lineas * 10) / 2) - ((line + 1) * 10), 
                 (lineas * 10) - ((line + 1) * 10), ((lineas * 10) / 2)); 
             
         }
-        if (((lineas * 10) / 2) + ((line + 1) * 10) < lineas * 10 ) {
+        if (((lineas * 10) / 2) + ((line + 1) * 10) < lineas * 10 ) {            
             drawLine(color3, ((line +1) * 10), ((lineas * 10) / 2), ((lineas * 10) / 2), 
                 ((lineas * 10) / 2) + ((line + 1) * 10));
             drawLine(color3, ((lineas * 10) / 2), ((lineas * 10) / 2) + ((line + 1) * 10), 
