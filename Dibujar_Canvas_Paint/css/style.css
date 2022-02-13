@@ -4,6 +4,7 @@ body {
     height: calc(100vh - 29px);
     text-align: center;
     position: relative;
+    user-select: none ;
 }
 h1 {
     margin-bottom: -10px;
