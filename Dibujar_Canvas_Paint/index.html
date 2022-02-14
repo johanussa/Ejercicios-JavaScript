@@ -19,21 +19,21 @@
         <canvas id="space-draw" width="1000" height="550"></canvas>
     </section>
     <section class="contain-menu">
-        <h2>* Configuracion *</h2>
+        <h2>- Configuración -</h2>
         <div class="contain-set">
-            <label for="">Selector de color Fondo</label>
-            <input type="color" name="" id="input-back">            
+            <label for="input-back">Selector de color Fondo</label>
+            <input type="color" id="input-back" value="#ffffff" />            
         </div>
         <div class="contain-set">
-            <label for="">Selector de color pincel</label>
-            <input type="color" name="" id="input-color">  
+            <label for="input-color">Selector de color Pincel</label>
+            <input type="color" id="input-color" />  
         </div>
         <div class="contain-set">
-            <label for="">Tamaño del pincel</label>
+            <label id="label-size" for="size-pencil">Tamaño de Pincel</label>
             <input type="range" value="3" id="size-pencil" max="20">
         </div>
-        <div class="contain-set">
-            <button>Borrador</button>
+        <div class="contain-set btn">
+            <button id="btn.eraser">Borrador</button>
             <button id="btn-clear">Limpiar Espacio</button>
         </div>
     </section>

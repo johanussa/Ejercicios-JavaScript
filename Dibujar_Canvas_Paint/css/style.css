@@ -1,13 +1,18 @@
 body {
-    background: -webkit-radial-gradient(rgb(255, 70, 70), rgb(0, 0, 0));
+    background: -webkit-radial-gradient(#d00000, #032b43);
     color: #fff;
     height: calc(100vh - 29px);
     text-align: center;
     position: relative;
     user-select: none ;
 }
-h1 {
-    margin-bottom: -10px;
+h1, h2 {
+    margin-bottom: 0px;
+    margin-top: 15px;
+    color: #ffba08;
+}
+p {
+    color: #f5dfbb;
 }
 .canvas-space #space-draw {
     border: 5px double black;
@@ -16,6 +21,7 @@ h1 {
     top: 100;
     left: 10px;
     background-color: #fff;
+    cursor: crosshair;
 }
 .contain-menu {
     width: 300px;
@@ -27,8 +33,7 @@ h1 {
     box-sizing: border-box;
 }
 .contain-set {
-    margin-bottom: 25px;
-    text-align: left;
+    margin-bottom: 20px;
 }
 .contain-menu h2 {
     margin-bottom: 40px;
@@ -41,13 +46,22 @@ h1 {
     border-radius: 520px;
     font-weight: 500;
     display: block;
+    background-color: #ffcfcc;
 }
 .contain-set button:hover {
     border: 2px outset black;
-    background-color: rgb(186, 0, 0);
+    background-color: #ba0000;
     color: #fff;
+}
+.contain-set.btn {
+    margin-top: 40px;
 }
 .contain-menu label, input {
     padding-right: 10px;
     vertical-align: middle;
+    background-color: inherit;
+    border: none;
+}
+.contain-set label {
+    color: #f5dfbb;
 }
