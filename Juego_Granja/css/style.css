@@ -1,0 +1,38 @@
+body {
+    background-color: antiquewhite;
+    text-align: center;
+}
+header {
+    margin: 130px auto 60px;
+}
+h1 {
+    font-size: 3em;
+    margin-bottom: 30px;    
+}
+p {
+    font-size: 1.1em;
+    font-family: cursive;
+}
+.arrows .bi {
+    font-size: 1.5em;
+    margin-right: 2px;
+}
+section .btn-start {
+    width: 250px;
+    font-size: 1.3em;
+    padding: 15px;
+    border-radius: 10px;
+    border: 3px solid rgb(148, 148, 148);
+    color: #fff;
+    background: -webkit-radial-gradient(red, black);
+}
+section .btn-start:hover {
+    background: -webkit-radial-gradient(black, red);
+    color: #ff5b5b;
+    border: 3px solid black;
+}
+#canvas-draw {
+    margin-top: 10px;
+    border: 1px solid black;
+    /* opacity: 0; */
+}
