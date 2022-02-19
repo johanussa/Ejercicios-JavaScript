@@ -34,5 +34,5 @@ section .btn-start:hover {
 #canvas-draw {
     margin-top: 10px;
     border: 1px solid black;
-    /* opacity: 0; */
+    opacity: 0;
 }
