@@ -12,17 +12,17 @@
     <header id="contain-head">
         <h1 id="title">TE SIENTES CON SUERTE !!</h1>
         <p id="paragraph">
-            Intenta llevar este cerdito a salvo a su corral y evita <br> que se 
-            encuentre con el feroz apetito de los lobos que merodean la granja. <br>
-            Para hacerlo, solo debes llevar el cerdito hasta su corral, <br> con ayuda 
-            de las flechas del teclado, podras moverlo a tu disposicion. Procura 
-            tampoco estrellarte con los demas animales. 
+            Intenta llevar este cerdito a salvo a su corral y evita que se encuentre
+            <br> con el feroz apetito de los lobos que merodean la granja. <br>
+            Para hacerlo, solo debes llevar el cerdito hasta su corral, señalado 
+            con la bandera amarilla. <br> Con ayuda de las flechas del teclado, podras 
+            moverlo a tu disposicion. Procura no estrellarte con los demas animales. 
         </p>
         <div class="arrows">
-            <i class="bi bi-arrow-left-square-fill"></i>
-            <i class="bi bi-arrow-up-square-fill"></i>
-            <i class="bi bi-arrow-down-square-fill"></i>
-            <i class="bi bi-arrow-right-square-fill"></i>
+            <i id="arrowLeft" class="bi bi-arrow-left-square-fill"></i>
+            <i id="arrowUp" class="bi bi-arrow-up-square-fill"></i>
+            <i id="arrowDown" class="bi bi-arrow-down-square-fill"></i>
+            <i id="arrowRight" class="bi bi-arrow-right-square-fill"></i>
         </div>
     </header>
     <main>
@@ -33,6 +33,7 @@
             <canvas id="canvas-draw" width="500" height="500"></canvas>
         </section>
     </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="game.js"></script>
 </body>
 </html>
