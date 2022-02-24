@@ -1,0 +1,158 @@
+body { background: #000; }
+.container {
+    width: 100vh;
+    height: 80vh;
+    border: 12px outset rgb(44, 192, 192);
+    margin: 50px auto;
+    background: -webkit-linear-gradient(#1b5baf, black);
+    color: #fff;
+    text-align: center;
+    font-family: monospace;
+    text-transform: uppercase;
+}
+.container #title {
+    font-size: 4.8em;
+    letter-spacing: 2px;
+}
+.options {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    margin-top: 50px;
+}
+.container .btn-option {
+    margin-top: 50px;
+    width: 220px;
+    padding: 16px;
+    font-weight: bolder;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    background-color: #fff;  
+    cursor: pointer;
+    border: none;
+}
+.container .btn-option:hover {
+    background-color: #33adff;
+}
+.btns {
+    height: 50%;
+}
+.btn-1 {
+    border-radius: 5px 0px 0px 5px;
+}
+.btn-2 {
+    border-radius: 0px 5px 5px 0px;
+}
+.btn-contain1 {
+    text-align: end;
+    margin-right: 70px;    
+}
+.btn-contain2 {
+    text-align: start;
+    margin-left: 70px;
+}
+.btn-option.btn-1:before {
+    content: "";
+    position: absolute;
+    top: 50px;
+    right: 22px;
+    width: 0;
+    height: 0;
+    border-width: 24px;
+    border-style: solid;
+    border-color:  transparent transparent transparent white;
+}
+.btn-option.btn-2:after {
+    content: "";
+    position: absolute;
+    top: 189px;
+    left: 22px;
+    width: 0;
+    height: 0;
+    border-width: 24px;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+}
+
+.options { display: none; }
+#subtitle { display: none; }
+
+.option-option #subtitle2 {
+    font-size: 1.6em;
+}
+#subtitle2 {
+    margin-top: -20px;
+    margin-bottom: 50px;
+}
+.ret-options .btn-retiro {
+    width: 270px;
+    margin-bottom: 25px;
+    padding: 15px;
+    font-size: 1em;
+    font-weight: bolder;
+    box-shadow: 2px 2px 5px white;
+    text-align: left;   
+    cursor: pointer; 
+}
+.ret-options .btn-retiro:hover {
+    background-color: #004979;
+    color: #fff;
+}
+.ret-options .option1 {
+    border-left: 25px solid black;
+}
+.ret-options .option2 {
+    border-right: 25px solid black;
+}
+
+.option-retiro { display: none; }
+
+.option-cant-money input, button {
+    display: block;
+    margin: 60px auto;
+}
+#input-money {
+    padding: 5px;
+}
+#btn-retiro {
+    padding: 10px;
+    font-weight: bolder;
+    border-radius: 5px;
+    border: 3px groove white;
+    background-color: #8696ac;
+    letter-spacing: 1px;
+    width: 120px;
+    cursor: pointer;
+}
+#btn-retiro:hover {
+    border: 3px ridge #004899;
+    background-color: #c5c5c5;
+}
+.option-cant-money { display: none; }
+
+.bi-caret-down-fill {
+    font-size: 2.5em;
+}
+.compuerta {
+    width: 400px;
+    height: 200px;
+    margin: 20px auto;
+    border: 5px solid black;
+    background-image: url("/assets/fondo.jpg");
+    background-size: cover;
+    position: relative;
+}
+.compuerta:before {
+	content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.7);
+}
+.info-retiro {
+    color: #fff;
+    position: relative;
+    margin-top: 30px;
+}
