@@ -1,4 +1,5 @@
 body { background: #000; }
+
 .container {
     width: 100vh;
     height: 80vh;
@@ -20,7 +21,7 @@ body { background: #000; }
     position: relative;
     margin-top: 50px;
 }
-.container .btn-option {
+.options .btn-option {
     margin-top: 50px;
     width: 220px;
     padding: 16px;
@@ -31,21 +32,17 @@ body { background: #000; }
     cursor: pointer;
     border: none;
 }
-.container .btn-option:hover {
+.options .btn-option:hover {
     background-color: #33adff;
 }
-.btns {
-    height: 50%;
-}
-.btn-1 {
-    border-radius: 5px 0px 0px 5px;
-}
-.btn-2 {
-    border-radius: 0px 5px 5px 0px;
-}
-.btn-contain1 {
+
+.btns { height: 50%; }
+.btn-1 { border-radius: 5px 0px 0px 5px; }
+.btn-2 { border-radius: 0px 5px 5px 0px; }
+
+.options .btn-contain1 {   
     text-align: end;
-    margin-right: 70px;    
+    margin-right: 70px; 
 }
 .btn-contain2 {
     text-align: start;
@@ -54,7 +51,7 @@ body { background: #000; }
 .btn-option.btn-1:before {
     content: "";
     position: absolute;
-    top: 50px;
+    top: 89px;
     right: 22px;
     width: 0;
     height: 0;
@@ -65,7 +62,7 @@ body { background: #000; }
 .btn-option.btn-2:after {
     content: "";
     position: absolute;
-    top: 189px;
+    top: 228px;
     left: 22px;
     width: 0;
     height: 0;
@@ -74,12 +71,8 @@ body { background: #000; }
     border-color: transparent white transparent transparent;
 }
 
-.options { display: none; }
-#subtitle { display: none; }
+.option-retiro #subtitle2 { font-size: 1.6em; }
 
-.option-option #subtitle2 {
-    font-size: 1.6em;
-}
 #subtitle2 {
     margin-top: -20px;
     margin-bottom: 50px;
@@ -98,23 +91,21 @@ body { background: #000; }
     background-color: #004979;
     color: #fff;
 }
-.ret-options .option1 {
-    border-left: 25px solid black;
-}
-.ret-options .option2 {
-    border-right: 25px solid black;
-}
+
+.ret-options .option1 { border-left: 25px solid black; }
+.ret-options .option2 { border-right: 25px solid black; }
+.ret-options { margin-top: -15px; }
 
 .option-retiro { display: none; }
 
-.option-cant-money input, button {
+#form-cant #input-money, #btn-retirar2 {
     display: block;
     margin: 60px auto;
 }
-#input-money {
-    padding: 5px;
-}
-#btn-retiro {
+
+#input-money { padding: 5px; }
+
+#btn-retirar2 {
     padding: 10px;
     font-weight: bolder;
     border-radius: 5px;
@@ -124,15 +115,14 @@ body { background: #000; }
     width: 120px;
     cursor: pointer;
 }
-#btn-retiro:hover {
+#btn-retirar2:hover {
     border: 3px ridge #004899;
     background-color: #c5c5c5;
 }
-.option-cant-money { display: none; }
 
-.bi-caret-down-fill {
-    font-size: 2.5em;
-}
+.option-cant-money { display: none; }
+.bi-caret-down-fill { font-size: 2.5em; }
+
 .compuerta {
     width: 400px;
     height: 200px;
@@ -156,3 +146,4 @@ body { background: #000; }
     position: relative;
     margin-top: 30px;
 }
+.transaction { display: none; }

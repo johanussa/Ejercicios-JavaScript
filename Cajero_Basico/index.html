@@ -11,48 +11,48 @@
 <body>
     <section class="container">
         <h1 id="title">Bienvenido</h1>
-        <h2 id="subtitle">Seleccione el tipo de operacion que desea realizar</h2>
-        <div class="options">
+        <div id="containMain" class="options">
+            <h2 id="subtitle">Seleccione el tipo de operacion que desea realizar</h2>
             <div class="btns btn-contain1">
-                <button class="btn-option btn-1">RETIRO</button>
+                <button id="btn-retirar1" class="btn-option btn-1">RETIRO</button>
             </div>
             <div class="btns btn-contain2">
                 <button class="btn-option btn-2">SALIR</button>
             </div>
         </div>
-        <div class="option-retiro">
+        <div id="containCant" class="option-retiro">
             <h2 id="subtitle2">seleccione el valor a retirar</h2>
             <div class="ret-options">
-                <button class="btn-retiro option1">20.000</button> &nbsp
-                <button class="btn-retiro option2">300.000</button> 
-                <button class="btn-retiro option1">50.000</button> &nbsp
-                <button class="btn-retiro option2">400.000</button>
-                <button class="btn-retiro option1">100.000</button> &nbsp
-                <button class="btn-retiro option2">600.000</button>
-                <button class="btn-retiro option1">200.000</button> &nbsp
+                <button class="btn-retiro option1" value="20000">20.000</button> &nbsp
+                <button class="btn-retiro option2" value="300000">300.000</button> 
+                <button class="btn-retiro option1" value="50000">50.000</button> &nbsp
+                <button class="btn-retiro option2" value="400000">400.000</button>
+                <button class="btn-retiro option1" value="100000">100.000</button> &nbsp
+                <button class="btn-retiro option2" value="600000">600.000</button>
+                <button class="btn-retiro option1" value="200000">200.000</button> &nbsp
                 <button class="btn-retiro option2">Otro valor</button>
             </div>
         </div>
-        <div class="option-cant-money">
+        <div id="selectMoney" class="option-cant-money">
             <h2>¿ cuanto dinero desea retirar ?</h2>
             <h4>
                 Recuerde que solo se aceptan digitos multiplos de 10 <br>
                 Maximo 2´500.000
             </h4>
-            <form>
+            <form id="form-cant">
                 <input type="number" id="input-money" required="required" 
                     placeholder="10000, 20000, 50000, 100000">     
-                <button id="btn-retiro" type="submit">RETIRAR</button>
+                <button id="btn-retirar2" type="submit">RETIRAR</button>
             </form>
         </div>
-        <div class="transaction">
+        <div id="show-money" class="transaction">
             <h2>Retire su Dinero</h2>
             <i class="bi bi-caret-down-fill"></i>
             <section class="compuerta">
                 <div class="info-retiro">
                     <h3>Su retiro es por valor de </h3>
-                    <small>$ 300.000</small>
-                    <p>                        
+                    <small id="retiro">$ 300.000</small>
+                    <p id="response">                        
                         Billetes de 100 mil: - - -- 4 <br>
                         Billetes de 50 mil: - - - - 4 <br>
                         Billetes de 20 mil: - - - - 4 <br>
