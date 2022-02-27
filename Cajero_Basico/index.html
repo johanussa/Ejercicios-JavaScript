@@ -17,7 +17,7 @@
                 <button id="btn-retirar1" class="btn-option btn-1">RETIRO</button>
             </div>
             <div class="btns btn-contain2">
-                <button class="btn-option btn-2">SALIR</button>
+                <button id="btn-exit" class="btn-option btn-2">SALIR</button>
             </div>
         </div>
         <div id="containCant" class="option-retiro">
@@ -42,26 +42,25 @@
             <form id="form-cant">
                 <input type="number" id="input-money" required="required" 
                     placeholder="10000, 20000, 50000, 100000">     
-                <button id="btn-retirar2" type="submit">RETIRAR</button>
+                <button id="btn-retirar2" type="button">RETIRAR</button>
             </form>
         </div>
         <div id="show-money" class="transaction">
-            <h2>Retire su Dinero</h2>
+            <h2>Por favor retire su Dinero</h2>
             <i class="bi bi-caret-down-fill"></i>
             <section class="compuerta">
                 <div class="info-retiro">
                     <h3>Su retiro es por valor de </h3>
-                    <small id="retiro">$ 300.000</small>
-                    <p id="response">                        
-                        Billetes de 100 mil: - - -- 4 <br>
-                        Billetes de 50 mil: - - - - 4 <br>
-                        Billetes de 20 mil: - - - - 4 <br>
-                        Billetes de 10 mil: - - - - 4 <br>                        
-                    </p>
+                    <small id="retiro">$</small>
+                    <p id="response"></p>
                 </div>
             </section>
+            <div class="btn-back">
+                <button id="btn-back-main">Regresar</button>
+            </div>
         </div>
     </section>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="cajero.js"></script>
 </body>
 </html>
