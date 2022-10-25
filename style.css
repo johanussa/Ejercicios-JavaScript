@@ -1,0 +1,65 @@
+body { 
+  height: 97vh;
+  background: linear-gradient(50deg, rgb(0, 26, 65), rgb(255, 67, 67)); 
+  background-size: contain;
+  text-align: center;
+  color: rgb(189, 0, 0);
+}
+.legend {
+  font-size: 35px;
+  text-shadow: 3px 3px 5px black;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#title {  
+  text-shadow: 3px 3px 5px black;
+  padding-top: 25px;  
+  text-transform: uppercase;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.container {
+  background-color: hsl(0, 0%, 0%, 0.4);
+  box-shadow: 3px 3px 5px black;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  top: 15%;
+  left: 25%;
+  text-align: left;
+  padding: 50px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.labels {
+  display: block;
+  font-size: 30px;
+  padding: 15px 10px 20px;
+  text-shadow: 3px 3px 5px black;
+}
+.inputs {
+  width: 94%;
+  height: 30px;
+  padding: 5px 10px;
+  background-color: transparent;
+  box-shadow: 1px 1px 1px rgba(255, 255, 255, 0);
+  border: none;
+  border-bottom: 2px solid black;
+  color: #fff;
+}
+.btn {
+  position: relative;
+  margin: 40px auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+.btn input {
+  padding: 10px 25px;
+  border-radius: 10px;
+  border-style: groove;
+  background-color: rgb(189, 0, 0);
+  color: rgb(199, 199, 199);
+}
+.btn input:hover {
+  background-color: rgb(255, 29, 29);
+  color: black;
+} 
