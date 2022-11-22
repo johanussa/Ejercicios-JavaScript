@@ -22,7 +22,7 @@
         </p>
       </div> 
       <div class="cardBtn">
-        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Ver Ejercicio
         </button>
       </div>
@@ -34,60 +34,62 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label">Tipo Identificacion</label>
-                  <select id="inputState" class="form-select form-select-sm" required>
-                    <option selected value="Cedula Ciudadania">Cedula Ciudadania</option>
-                    <option value="Tarjeta Identidad">Tarjeta Identidad</option>
-                    <option value="Pasaporte">Pasaporte</option>
-                  </select>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Número Identificacion</label>
-                  <input id="inputNum" type="number" class="form-control form-control-sm" placeholder="Identificacion" required>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Nombre</label>
-                  <input id="inputName" type="text" class="form-control form-control-sm" placeholder="Ingrese Nombre" 
-                    required="true" autocomplete="off">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Apellido</label>
-                  <input id="inpLast" type="text" class="form-control form-control-sm" placeholder="Ingrese Apellido" 
-                    required autocomplete="off">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Edad</label>
-                  <input id="inputAge" type="number" class="form-control form-control-sm" placeholder="Ingrese Edad" 
-                    required autocomplete="off">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Direccion</label>
-                  <input id="inpAdress" type="text" class="form-control form-control-sm" placeholder="Ingrese Direccion" 
-                    required autocomplete="off">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Telefono</label>
-                  <input id="inputTel" type="number" class="form-control form-control-sm" placeholder="Ingrese Telefono" 
-                    required autocomplete="off">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Estrato</label>
-                  <select id="inputEstrat" class="form-select form-select-sm" required>
-                    <option selected value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
-                </div>
+              <form id="dataForm">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Tipo Identificacion</label>
+                    <select id="inputState" class="form-select form-select-sm" required>
+                      <option selected value="Cedula Ciudadania">Cedula Ciudadania</option>
+                      <option value="Tarjeta Identidad">Tarjeta Identidad</option>
+                      <option value="Pasaporte">Pasaporte</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Número Identificacion</label>
+                    <input type="number" class="form-control form-control-sm req" placeholder="Identificacion" id="inputNum" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Nombre</label>
+                    <input id="inputName" type="text" class="form-control form-control-sm req" placeholder="Ingrese Nombre" 
+                      required="true" autocomplete="off">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Apellido</label>
+                    <input id="inpLast" type="text" class="form-control form-control-sm req" placeholder="Ingrese Apellido" 
+                      required autocomplete="off">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Edad</label>
+                    <input id="inputAge" type="number" class="form-control form-control-sm req" placeholder="Ingrese Edad" 
+                      required autocomplete="off">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Direccion</label>
+                    <input id="inpAdress" type="text" class="form-control form-control-sm" placeholder="Ingrese Direccion" 
+                      required autocomplete="off">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Telefono</label>
+                    <input id="inputTel" type="number" class="form-control form-control-sm req" placeholder="Ingrese Telefono" 
+                      required autocomplete="off">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Estrato</label>
+                    <select id="inputEstrat" class="form-select form-select-sm" required>
+                      <option selected value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
+                </div>              
               </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-dark" onclick="confirmarData()">Guardar</button>
-            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-dark">Guardar</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -102,7 +104,7 @@
         </p>
       </div>
       <div class="cardBtn">
-        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalEjercicio2">
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEjercicio2">
           Ver Ejercicio
         </button>
       </div>
@@ -145,7 +147,7 @@
         </p>
       </div>
       <div class="cardBtn">
-        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalEjercicio3">
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEjercicio3">
           Ver Ejercicio
         </button>
       </div>
@@ -172,11 +174,12 @@
       <div class="card-body">
         <h5 class="card-title">Suma de los 1000 primeros numeros</h5>
         <p class="card-text">
-          Escriba una función que calcule y muestre la suma de los 1000 primeros números naturales
+          Escriba una función que calcule y muestre la suma de los 1000 primeros números naturales.
+          Se sumaran todos los valores que se enceuntren en este rango.
         </p>
       </div>
       <div class="cardBtn">
-        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalEjercicio4">
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEjercicio4">
           Ver Ejercicio
         </button>
       </div>
@@ -209,7 +212,32 @@
         </p>
       </div>
       <div class="cardBtn">
-        <button type="button" class="btn btn-secondary">Ver Ejercicio</button>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEjercicio5">
+          Ver Ejercicio
+        </button>
+      </div>
+      <div class="modal fade" id="modalEjercicio5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Suma de números Impares</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="col-md-12">
+                <label for="typeText" class="form-label">Ingrese un número entre 1 y 500</label>
+                <input id="inpNum" type="number" class="form-control form-control-sm" placeholder="Ingrese un valor numerico" 
+                  required autocomplete="off">
+              </div>
+              <hr>
+              <p id="showAddImpar">Ingrese la informacion en el input</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-dark" onclick="showAdd()">Evaluar</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div> 
     <div class="card text-bg-dark mb-1" style="max-width: 18rem;">
@@ -224,7 +252,7 @@
         </p>
       </div>
       <div class="cardBtn">
-        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalEjercicio6">
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEjercicio6">
           Ver Ejercicio
         </button>
       </div>
@@ -258,11 +286,12 @@
         <h5 class="card-title">Numeros Primos &lt;= n</h5>
         <p class="card-text">
           Usando la función prompt, solicitar un número, y mostrar todos los números primos 
-          menores o iguales que el que entre el usuario.
+          menores o iguales que el que entre el usuario. Recordemos que un numero primo, es aquel Número
+          que es solamente divisible por 1 y por si mismo.
         </p>
       </div>
       <div class="cardBtn">
-        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalEjercicio7">
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEjercicio7">
           Ver Ejercicio
         </button>
       </div>
@@ -295,11 +324,12 @@
       <div class="card-body">
         <h5 class="card-title">Numeros de la raiz cuadrada de 1 a 100</h5>
         <p class="card-text">
-          Imprimir un listado con los números del 1 al 100 cada uno con su respectivo cuadrado
+          Imprimir un listado con los números del 1 al 100 cada uno con su respectivo cuadrado.
+          La funcion tomara cada numero entre ese rango y mostrara su raiz cuadrada.
         </p>
       </div>
       <div class="cardBtn">
-        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalEjercicio8">
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEjercicio8">
           Ver Ejercicio
         </button>
       </div>
@@ -327,24 +357,69 @@
         <h5 class="card-title">Numeros Impares 1 a 999</h5>
         <p class="card-text">
           Imprimir un listado con los números impares desde 1 hasta 999 y seguidamente otro 
-          listado con los números pares desde 2 hasta 1000.
+          listado con los números pares desde 1 hasta 1000.
         </p>
       </div>
       <div class="cardBtn">
-        <button type="button" class="btn btn-secondary">Ver Ejercicio</button>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEjercicio9">
+          Ver Ejercicio
+        </button>
       </div>
     </div> 
+    <div class="modal fade" id="modalEjercicio9" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Numeros Impares de 1 a 999</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p id="showImpar">Oprima el boton 'Generar', para mostrar los numeros Impares del 1 al 999</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-dark" onclick="generateImpar()">Generar</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="card text-bg-dark mb-1" style="max-width: 18rem;">
       <div class="card-header">Ejercicio 10</div>
       <div class="card-body">
         <h5 class="card-title">Numeros Pares descendentes</h5>
         <p class="card-text">
-          Imprimir los números pares desde N (siendo N un número par que se lee) en forma 
-          descendente hasta 2.
+          Imprimir los números pares desde N (siendo N un número par que se lee, valor que ingresa 
+          el usuario) en forma descendente hasta llegar al número 2.
         </p>
       </div>
       <div class="cardBtn">
-        <button type="button" class="btn btn-secondary">Ver Ejercicio</button>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEjercicio10">
+          Ver Ejercicio
+        </button>
+      </div>
+      <div class="modal fade" id="modalEjercicio10" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Numeros Pares descendentes</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body"> 
+              <label for="inpParDes" class="form-label">Ingrese un número Entero</label>
+              <input id="inpParDes" type="number" class="form-control form-control-sm" 
+                placeholder="Mostrara descendentemente los numeros pares " required autocomplete="off">
+              <hr>
+              <p id="showPares">
+                Ingrese un número entero en el campo y se mostraran todos lo números pares comprendidos entre el
+                valor ingresado y el número 2.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-dark" onclick="generatePares()">Generar</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div> 
     <div class="card text-bg-dark mb-1" style="max-width: 18rem;">
@@ -357,32 +432,103 @@
         </p>
       </div>
       <div class="cardBtn">
-        <button type="button" class="btn btn-secondary">Ver Ejercicio</button>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEjercicio11">
+          Ver Ejercicio
+        </button>
+      </div>
+      <div class="modal fade" id="modalEjercicio11" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Serie Fibonacci - 100 Primeros números</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p id="showFibo">Oprima el boton 'Generar', para mostrar los numeros de la serie Fibonacci</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-dark" onclick="fibonacci()">Generar</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div> 
     <div class="card text-bg-dark mb-1" style="max-width: 18rem;">
       <div class="card-header">Ejercicio 12</div>
       <div class="card-body">
-        <h5 class="card-title">Factorial de cada numero</h5>
+        <h5 class="card-title">Factorial de cada número</h5>
         <p class="card-text">
-          Imprimir los números de 1 a N (siendo N un número que se lee) cada uno con su 
-          respectivo factorial.
+          Imprimir los números de 1 a N (siendo N un número que se lee, un valor que ingresa el 
+          usuario) cada uno de los números entre ese rango se mostrara con su respectivo factorial.
         </p>
       </div>
       <div class="cardBtn">
-        <button type="button" class="btn btn-secondary">Ver Ejercicio</button>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEjercicio12">
+          Ver Ejercicio
+        </button>
+      </div>
+      <div class="modal fade" id="modalEjercicio12" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Números Factoriales</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <label for="numFactor" class="form-label">Ingrese un número Entero</label>
+              <input id="numFactor" type="number" class="form-control form-control-sm" 
+                placeholder="Mostrar los factoriales de 1 al número ingresado" required autocomplete="off">
+              <hr>
+              <p id="showFactor">
+                Ingrese un número entero en el campo y se mostraran el factorial de cada número comprendido 
+                entre 1 y el valor ingresado.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-dark" onclick="factorial()">Generar</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div> 
     <div class="card text-bg-dark mb-1" style="max-width: 18rem;">
       <div class="card-header">Ejercicio 13</div>
       <div class="card-body">
-        <h5 class="card-title">Suma 100 numeros</h5>
+        <h5 class="card-title">Factorial de un número</h5>
         <p class="card-text">
-          Calcular el factorial de un número N (siendo N un número que se lee).
+          Calcular el factorial de un número N (siendo N un número que se lee, un valor que ingresa el usuario)
+          y se realizara el procedimiento para que se muestre el Factorial de ese número.
         </p>
       </div>
       <div class="cardBtn">
-        <button type="button" class="btn btn-secondary">Ver Ejercicio</button>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEjercicio13">
+          Ver Ejercicio
+        </button>
+      </div>
+      <div class="modal fade" id="modalEjercicio13" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Factorial de un Número</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <label for="numFactorOne" class="form-label">Ingrese un número Entero</label>
+              <input id="numFactorOne" type="number" class="form-control form-control-sm" 
+                placeholder="Mostrar el factorial del número ingresado" required autocomplete="off">
+              <hr>
+              <p id="showFactorOne">
+                Ingrese un número entero en el campo y se mostraran el factorial del valor ingresado.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-dark" onclick="factorialOne()">Generar</button> 
+            </div>
+          </div>
+        </div>
       </div>
     </div> 
     <div class="card text-bg-dark mb-1" style="max-width: 18rem;">
@@ -390,11 +536,37 @@
       <div class="card-body">
         <h5 class="card-title">Mayor y Menor de 20 numeros</h5>
         <p class="card-text">
-          Leer 20 números y encontrar el mayor y el menor valor leídos.
+          Leer 20 números y encontrar el mayor y el menor valor leídos. El usuario ingresara multiples valores
+          en el input, y la funcion tomara estos valores y mostrara el número Maximo y el Minimo.
         </p>
       </div>
       <div class="cardBtn">
-        <button type="button" class="btn btn-secondary">Ver Ejercicio</button>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEjercicio14">
+          Ver Ejercicio
+        </button>
+      </div>
+      <div class="modal fade" id="modalEjercicio14" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Número Mayor y Menor de valores Ingresados</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <label for="numsArray" class="form-label">Ingrese Números en el cuadro de Texto</label>
+              <input id="numsArray" type="text" class="form-control form-control-sm" 
+                placeholder="Ingresar los numeros separados por un espacio (' ')" autocomplete="off">
+              <hr>
+              <p id="showMayMen">
+                Ingrese los numeros en el campo y separe cada uno de ellos por un espacio.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-dark" onclick="mayorMenor()">Generar</button> 
+            </div>
+          </div>
+        </div>
       </div>
     </div> 
     <div class="card text-bg-dark mb-1" style="max-width: 18rem;">
@@ -403,15 +575,40 @@
         <h5 class="card-title">Potencia 2 a la n</h5>
         <p class="card-text">
           Leer un dato y almacenarlo en la variable n. Calcular el valor de 2 elevado a la 
-          potencia n
+          potencia n. Estos valores se leeran a traves de 1 input, y se realiza el calculo matematico.
         </p>
       </div>
       <div class="cardBtn">
-        <button type="button" class="btn btn-secondary">Ver Ejercicio</button>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEjercicio15">
+          Ver Ejercicio
+        </button>
+      </div>
+      <div class="modal fade" id="modalEjercicio15" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Potencia</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <label for="numPoten" class="form-label">Ingrese el valor a Elevar</label>
+              <input id="numPoten" type="text" class="form-control form-control-sm" 
+                placeholder="Ingresar un Número Entero" autocomplete="off">
+              <hr>
+              <p id="showPoten">
+                Ingrese el número al cual sera elevado el número 2 y presione el boton 'Elevar'.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-dark" onclick="potencia()">Elevar</button> 
+            </div>
+          </div>
+        </div>
       </div>
     </div> 
-    <div class="card text-bg-dark mb-1" style="max-width: 18rem;">
-      <div class="card-header">Ejercicio 15</div>
+    <div class="card text-bg-dark mb-1 ultimo" style="max-width: 18rem;">
+      <div class="card-header">Ejercicio 16</div>
       <div class="card-body">
         <h5 class="card-title">Calcular valor de x a la n</h5>
         <p class="card-text">
@@ -420,7 +617,36 @@
         </p>
       </div>
       <div class="cardBtn">
-        <button type="button" class="btn btn-secondary">Ver Ejercicio</button>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalEjercicio16">
+          Ver Ejercicio
+        </button>
+      </div>
+      <div class="modal fade" id="modalEjercicio16" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Potenciacion</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <label for="numBase" class="form-label">Ingrese el numero base</label>
+              <input id="numBase" type="number" class="form-control form-control-sm" 
+                placeholder="Ingresar un Número Entero" autocomplete="off">
+              <label for="numEleva" class="form-label  mt-2">Ingrese el valor a Elevar</label>
+              <input id="numEleva" type="number" class="form-control form-control-sm" 
+                placeholder="Ingresar un Número Entero" autocomplete="off">
+              <hr>
+              <p id="showResult">
+                Ingrese los números a los cuales elevara, el valor del segundo campo elevara 
+                el valor del primer campo, para ello presione el boton 'Elevar'.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-dark" onclick="elevado()">Elevar</button> 
+            </div>
+          </div>
+        </div>
       </div>
     </div> 
   </div>

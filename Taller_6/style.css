@@ -1,27 +1,30 @@
 body { 
-  background: linear-gradient(rgb(147, 205, 255), rgb(116, 116, 116));
+  background: linear-gradient(#1fb2d2, #012027);
+  background-repeat: no-repeat;
 }
 .contain {
   text-align: center;
-  max-width: 1138px;
+  width: 90%;
   margin: auto;
 }
 .title { 
   text-align: center; 
   margin: 20px auto 30px; 
-  color: rgb(0, 195, 255);
-  text-shadow: 1px 1px 5px black;
+  color: #12170c;
+  text-shadow: 2px 2px 4px #da6565;
+  text-transform: uppercase;
+  text-decoration: overline;
 }
 .card { 
   float: left;
-  width: 280px;
-  height: 350px;
-  margin-right: 4px;
-  transition: all 0.8ms ease;
+  height: 380px;
+  transition: all 400ms ease;
+  border: 2px solid #f8efbc;
+  margin: 5px;
 }
 .card:hover {
-  background-color: rgb(61, 61, 61) !important;
-  box-shadow: 0px 0px 15px rgb(255, 164, 164);
+  background-color: #c74242 !important;
+  box-shadow: 0px 0px 25px rgb(255, 255, 255);
 }
 p { text-align: justify; }
 .cardBtn {
@@ -30,7 +33,8 @@ p { text-align: justify; }
   margin: auto;
 }
 .modal { color: #000; }
-#showString, #showNums1000, #showType { 
+#showString, #showNums1000, #showType, #showAddImpar, 
+#showFactorOne, #showMayMen, #showPoten, #showResult { 
   background-color: aliceblue;
   text-align: center; 
   font-size: 1.3em;
@@ -38,9 +42,31 @@ p { text-align: justify; }
   margin: 0;
   font-weight: 600;
 }
-#showNums, #showPrimos, #showSquart {
+#showNums, #showPrimos, #showSquart, #showImpar, 
+#showPares, #showFibo, #showFactor {
   background-color: aliceblue;
   height: 195px;
   overflow: auto;
+  font-weight: 500;
+  padding: 10px;
+}
+.req:invalid:required {
+  background-image: linear-gradient(to right, pink, lightgreen);
+  border: 1px solid rgb(255, 147, 147);
+}
+.btn-info:hover {
+  background-color: #005c79;
+  color: #fff;
+}
+.btn-info {
+  border: 2px solid #f8efbc;
+  font-weight: 500;
+}
+.modal-header {
+  border-bottom: 2px solid #000;
+  background-color: #1fb2d2;
+}
+.card-header {
+  background-color: #007e94;
   font-weight: 500;
 }
