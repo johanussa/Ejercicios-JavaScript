@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases con JS</title>
+    <style>
+        body {
+            background: linear-gradient(90deg, rgb(20, 157, 220), #fff);
+            background-attachment: fixed;
+            color: rgb(0, 19, 83);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        class Producto {
+            static contador = 0;
+            constructor(nombre, precio) {
+                this._Id = ++ Producto.contador;
+                this._nombre = nombre;
+                this._precio = precio.toLocaleString();
+            }
+            get IdProd() { return this._Id; }
+            get nombre() { return this._nombre; }
+            set nombre(nombre) { this._nombre = nombre; }
+            get precio() { return this._precio; }
+            set precio(precio) { this._precio = precio; }
+
+            toString() {
+                return {
+                    ID: this._Id,
+                    Nombre_Prod: this._nombre,
+                    Precio: `$ ${this._precio}`
+                }
+            }
+        }
+        class Orden {
+            static contador = 0;
+            static get MAX_PROD() { return 5; }
+
+            constructor() {
+                this._Id = ++ Orden.contador;
+                this._products = [];
+                this._cantProd = this._products.length;
+            }
+            addProduct(product) {
+                if (this._products.length < Orden.MAX_PROD) {
+                    this._products.push(product); 
+                } else { console.error('El numero de productos permitido se ha superado'); }
+            }
+            calcTotal() { 
+                if (this._products.length > 0) {
+                    return this._products.reduce((suma, product) => suma + product._precio, 0); 
+                } else { return 0; }
+            }
+            toString(){
+                return {
+                    ID_Orden: this._Id,
+                    Productos: this._products,
+                    Total: `$ ${this.calcTotal().toLocaleString()}`
+                }
+            }
+        }
+        let product1 = new Producto('Celular', 750000);
+        let product2 = new Producto('Computador', 1500000);
+        let product3 = new Producto('Tablet', 300000);
+
+        const order1 = new Orden();
+
+        order1.addProduct(product1);
+        order1.addProduct(product2);
+        order1.addProduct(product1);
+        order1.addProduct(product2);
+        order1.addProduct(product3);
+        
+        const data = order1.toString();
+
+        document.write(`Orden Numero: ${data.ID_Orden} <br><hr>Productos:<br>`);
+        const ul = document.createElement('ul');
+        document.body.append(ul);
+
+        data.Productos.forEach((e) => {
+            let li = document.createElement('li');
+            li.innerText = `Id Producto: ${e._Id}`;
+            ul.append(li);
+            li = document.createElement('li');
+            li.innerText = `Nombre: ${e._nombre}`;
+            ul.append(li);
+            li = document.createElement('li');
+            li.innerText = `Precio: $ ${e._precio}`;
+            ul.append(li); 
+            const line = document.createElement('br');
+            ul.append(line); 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases en JS</title>
+</head>
+<body>
+    <script>
+        class Persona {
+            static contador = 0;
+            constructor(nombre, apellido, edad) {
+                this._Id = ++ Persona.contador;
+                this._nombre = nombre;
+                this._apellido = apellido;
+                this._edad = edad; 
+            }
+            get Id() { return this._Id; }
+            get nombre() { return this._nombre; }
+            set nombre(nombre) { this._nombre = nombre; }
+            get apellido() { return this._apellido; }
+            set apellido(apellido) { this._apellido = apellido; }
+            get edad() { return this._edad; }
+            set edad(edad) { this._edad = edad; }
+
+            toString() {
+                return {
+                    ID: this._Id,
+                    Nombre: this._nombre,
+                    Apellido: this._apellido,
+                    Edad: this._edad
+                }
+            }
+        }
+        class Empleado extends Persona {
+            static contador = 0;
+            constructor(nombre, apellido, edad, sueldo){
+                super(nombre, apellido, edad);
+                this._idEmpleado = ++ Empleado.contador;
+                this._sueldo = sueldo;
+            }
+            get idEmpleado() { return this._idEmpleado; }
+            get sueldo() { return this._sueldo; }
+            set sueldo(sueldo) { this._sueldo = sueldo; }
+
+            toString() {
+                let data = super.toString();
+                data.IdEmpleado = this._idEmpleado;
+                data.Sueldo = this._sueldo.toLocaleString();
+                return data;
+            }
+        }
+        class Cliente extends Persona {
+            static contador = 0;
+            constructor(nombre, apellido, edad, fechaReg){
+                super(nombre, apellido, edad);
+                this._idCliente = ++ Cliente.contador;
+                this._fechaReg = fechaReg;
+            }
+            get idCliente() { return this._idCliente; }
+            get fechaReg() { return this._fechaReg; }
+            set fechaReg(fecha) { this._fechaReg = fecha; }
+
+            toString() {
+                let data = super.toString();
+                data.IdCliente = this._idCliente;
+                data.Fecha = this._fechaReg;
+                return data;
+            }
+        }
+
+        let persona1 = new Persona('Johan', 'Ussa', 25);
+        console.log(persona1.toString());
+
+        let empleado1 = new Empleado('Ana', 'Rubio', 21, 540000);
+        console.log(empleado1.toString());
+
+        let cliente1 = new Cliente('Fabian', 'Vargas', 34, new Date().toLocaleString());
+        console.log(cliente1.toString());
+    </script>
+</body>
+</html>

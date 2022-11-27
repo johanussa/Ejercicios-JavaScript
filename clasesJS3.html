@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases con JS</title>
+    <style>
+        body {
+            padding: 20px;
+            background: radial-gradient(rgb(83, 152, 255), rgb(0, 0, 0));
+            background-attachment: fixed;
+            color: #fff;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        'use strict';
+        class DispoEntrada {
+            constructor(tipoEntrada, marca) {
+                this._tipoEntrada = tipoEntrada;
+                this._marca = marca;
+            }
+            get tipoEntrada() { return this._tipoEntrada; }
+            set tipoEntrada(tipoEntrada) { this._tipoEntrada = tipoEntrada; }
+            get marca() { return this._marca; }
+            set marca(marca) { this._marca = marca; }
+            toString() {
+                return {
+                    TipoEntrada: this._tipoEntrada,
+                    Marca: this._marca
+                }
+            }
+        }
+        class Raton extends DispoEntrada {
+            static contador = 0;
+            constructor(tipoEntrada, marca) {
+                super(tipoEntrada, marca);
+                this._Id = ++ Raton.contador;
+            }
+            get id() { return this._Id; }
+            toString() {
+                let data = {
+                    Id_Raton : this._Id,
+                    ...super.toString()
+                } 
+                return data;
+            }
+        }
+        class Teclado extends DispoEntrada {
+            static contador = 0;
+            constructor(tipoEntrada, marca) {
+                super(tipoEntrada, marca);
+                this._Id = ++ Teclado.contador;
+            }
+            get id() { return this._Id; }
+            toString() {
+                let data = { 
+                    Id_Teclado : this._Id,
+                    ...super.toString()
+                }
+                return data;
+            }
+        }
+        class Monitor {
+            static contador = 0;
+            constructor(marca, size) {
+                this._Id = ++ Monitor.contador;
+                this._marca = marca;
+                this._size = size;
+            }
+            get id() { return this._Id; }
+            get marca() { return this._marca; }
+            set marca(marca) { this._marca = marca; }
+            get size() { return this._size; }
+            set size(size) { this._size = size; }
+            toString() {
+                return {
+                    Id_Monitor: this._Id,
+                    Marca: this._marca,
+                    Tamaño: this._size
+                }
+            }
+        }
+        class Computadora {
+            static contador = 0;
+            constructor(nombre, monitor, teclado, raton) {
+                this._Id = ++ Computadora.contador;
+                this._nombre = nombre;
+                this._monitor = monitor;
+                this._teclado = teclado;
+                this._raton = raton;
+            }
+            get id() { return this._Id; }
+            get nombre() { return this._nombre; }
+            set nombre(nombre) { this._nombre = nombre; }
+            get monitor() { return this._monitor; }
+            set monitor(monitor) { this._monitor = monitor; }
+            get teclado() { return this._teclado; }
+            set teclado(teclado) { this._teclado = teclado; }
+            toString() {
+                return {
+                    ID_Computador: this._Id,
+                    Nombre: this._nombre,
+                    Monitor: this._monitor,
+                    Teclado: this._teclado,
+                    Raton: this._raton
+                }
+            }
+        }
+        class Orden {
+            static contador = 0;
+            constructor() {
+                this._Id = ++ Orden.contador;
+                this._computers = [];
+            }
+            get id() { return this._Id; }
+            get computers() { return this._computers; }
+            addComputer(computer) { this._computers.push(computer); }
+            toString() {
+                return {
+                    Id_Orden: this._Id,
+                    Computadoras: this._computers
+                }
+            }
+        }
+        const dispoEnt1 = new DispoEntrada('USB', 'Lenovo');
+        const raton1 = new Raton('Bluetooth', 'MSI');
+        const raton2 = new Raton('USB', 'DELL');
+        const tecla1 = new Teclado('USB', 'Genius');
+        const tecla2 = new Teclado('Bluetooth', 'ACER');
+        const monitor1 = new Monitor('HP', '25P');
+        const monitor2 = new Monitor('DELL', '27P');
+        const compu1 = new Computadora('Hewlett Packard', monitor1, tecla1, raton1);
+        const compu2 = new Computadora('Armada', monitor2, tecla2, raton2);
+        const compu3 = new Computadora('Armada', monitor2, tecla2, raton2);
+        const compu4 = new Computadora('Armada', monitor2, tecla2, raton2);
+        const orden1 = new Orden();
+        const orden2 = new Orden();
+        
+        orden1.addComputer(compu1);
+        orden1.addComputer(compu2);
+        orden2.addComputer(compu1);
+        orden2.addComputer(compu2);
+        orden2.addComputer(compu3);
+        orden2.addComputer(compu4);
+
+        console.log(orden1.toString().Computadoras.filter((e) => e._nombre === 'Hewlett Packard'));
+        console.log(orden1.toString());
+        console.log(orden2.toString());
+
+        showData(orden1);
+        showData(orden2);
+
+        function showData(object) {
+            document.write(`<hr>> Numero de Orden: ${object.toString().Id_Orden} <hr>`);
+            let ul = document.createElement('ul');
+            document.body.append(ul);
+            object.toString().Computadoras.forEach(e => {
+                let li = document.createElement('li');
+                li.innerText = `Id Computador: ${e._Id}`;
+                ul.append(li);
+                li = document.createElement('li');
+                li.innerText = `Marca: ${e._nombre}`;
+                ul.append(li);
+    
+                li = document.createElement('li');
+                li.innerText = `Monitor:`;
+                ul.append(li);
+                let ul2 = document.createElement('ul');
+                ul.append(ul2);
+                li = document.createElement('li');
+                li.innerText = `Id Computador: ${e._monitor._Id}`;
+                ul2.append(li);
+                li = document.createElement('li');
+                li.innerText = `Id Computador: ${e._monitor._marca}`;
+                ul2.append(li);
+                li = document.createElement('li');
+                li.innerText = `Id Computador: ${e._monitor._size}`;
+                ul2.append(li);
+    
+                li = document.createElement('li');
+                li.innerText = `Teclado:`;
+                ul.append(li);            
+                let ul3 = document.createElement('ul');
+                ul.append(ul3);
+                li = document.createElement('li');
+                li.innerText = `Id Computador: ${e._teclado._Id}`;
+                ul3.append(li);
+                li = document.createElement('li');
+                li.innerText = `Id Computador: ${e._teclado._marca}`;
+                ul3.append(li);
+                li = document.createElement('li');
+                li.innerText = `Id Computador: ${e._teclado._tipoEntrada}`;
+                ul3.append(li);
+    
+                li = document.createElement('li');
+                li.innerText = `Raton:`;
+                ul.append(li); 
+                let ul4 = document.createElement('ul');
+                ul.append(ul4);
+                li = document.createElement('li');
+                li.innerText = `Id Computador: ${e._raton._Id}`;
+                ul4.append(li);
+                li = document.createElement('li');
+                li.innerText = `Id Computador: ${e._raton._marca}`;
+                ul4.append(li);
+                li = document.createElement('li');
+                li.innerText = `Id Computador: ${e._raton._tipoEntrada}`;
+                ul4.append(li);
+    
+                const br = document.createElement('br');
+                ul.append(br);
+            });
+        }      
+    </script>
+</body>
+</html>
