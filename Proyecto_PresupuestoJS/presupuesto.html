@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">    
+    <title>Aplicación Presupuesto</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="superior">
+            <h2>Presupuesto Disponible:</h2>
+            <p id="presupuesto">$ 1.200.000</p>
+            <div class="btns">
+                <p id="ingr1" class="boxIngEgr">INGRESOS 
+                    <span id="porcentIngre" class="span">42.86%</span>
+                    <span id="ingresos">+ $ 2.100.000</span>
+                </p>
+                <p id="egre1" class="boxIngEgr">EGRESOS 
+                    <span id="porcentEgre" class="span">42.86%</span>
+                    <span id="egresos">- $ 900.000</span>
+                </p>
+            </div>
+        </div>
+        <div class="inferior">
+            <div class="inputs">
+                <form id="formAdd">
+                    <select name="" id="selecType">
+                        <option value="Ingreso" selected>Ingreso</option>
+                        <option value="Egreso">Egreso</option>
+                    </select>
+                    <input type="text" placeholder="Ingrese Descripcion" id="inpDes" required>
+                    <input type="number" placeholder="Valor a ingresar" step="any" required>
+                    <button>Registrar</button>
+                </form>
+            </div>
+            <div class="contDivs">
+                <div class="ingreEgre">
+                    <h2 class="green titleData">INGRESOS</h2><hr class="hrData">
+                    <ul id="ulIngre">
+                        <li class="spanEgreIngre">
+                            <span class="btnDelete" title="Eliminar">&#x274c</span>
+                            Salario <span class="span">42.86%</span>
+                            <span class="green">+ $2.100.000</span>                            
+                        </li><hr>
+                    </ul>
+                </div>
+                <div class="ingreEgre">
+                    <h2 class="red titleData">EGRESOS</h2><hr class="hrData">
+                    <ul id="ulEgre">
+                        <li class="spanEgreIngre">Pago Arriendo otra cosa mas larga
+                            <span class="btnDelete">&#x274c</span>
+                            <span class="span">42.86%</span><span class="red">- $900.000</span>
+                        </li><hr>
+                    </ul>
+                </div>
+            </div><br>
+        </div>
+    </div>
+    <script src="./javascript/clases.js"></script>
+    <script src="./javascript/script.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
