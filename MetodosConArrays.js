@@ -37,6 +37,33 @@ console.log(array.indexOf("Martha")); // -1
 var array3 = new Array("Pedro", "Pablo", "Pedro", "Perez", "Pedro");
 console.log(array3.lastIndexOf("Pedro")); // 4
 
+/*
+    .findIndex() = Retorna el indice del elemento que se esta buscando, pero este puede 
+    iterar objetos por lo que recibe un callback para realizar la busqueda
+*/
+
+let person = [
+	{ id: 1, nombre: 'Johan', apellido: 'Ussa' },
+	{ id: 2, nombre: 'Sebastian', apellido: 'Mendez' },
+	{ id: 3, nombre: 'Laura', apellido: 'Arania' }
+];
+const index = person.findIndex(e => e.id === 2);
+console.log(index);  // Retorna -> 1
+
+// Como ya se obtuvo el indice del elemento lo podremos eliminar si queremos 
+// para eso esta el metodo .splice() que me permite eliminar un registro en este caso
+
+/*
+    .splice() = Me permite eliminar un campo de un array u objeto Recibe dos parametros, 
+    el primero el indice del dato a eliminar, y el segundo la cantidad de registros que 
+    se eliminaran, en este caso solo 1
+*/
+
+// Eliminar el registro con id = 1
+
+person.splice(index, 1);
+console.log(person);
+
 /* .map() = Devuelve un nuevo array que contiene los resultados tras haber 
     sido tratados por la funcion que se proporciona por parametro */
 
@@ -67,7 +94,7 @@ console.log(newA); // [ 1, 4, 9, 36, 4, 9, 1, 25, 16 ]
 console.log(newA.pop()); // 16
 console.log(newA.pop()); // 25
 
-/* .push() = Añade el elemento al final del objeto y retorna el array resultante */
+/* .push() = AÃ±ade el elemento al final del objeto y retorna el array resultante */
 
 const array1 = new Array(5, 10, 15, 27);
 console.log(array1.push(94));
