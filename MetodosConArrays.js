@@ -104,10 +104,25 @@ console.log(array1);  // [ 5, 10, 15, 27, 94, 12 ]
 /* .reverse() = Retorna el array en orden inverso */
 
 console.log(array1.reverse()); // [ 12, 94, 27, 15, 10, 5 ]
+ 
+/* .shift() = .pop() siempre elimina el último elemento de un arreglo. ¿Qué tal si quieres eliminar el primero?
+Ahí es donde entra .shift(). Funciona igual que .pop(), excepto que elimina el primer elemento en lugar del último. */
+
+const ourArray = ["Stimpson", "J", ["cat"]];
+const removedFromOurArray = ourArray.shift();
+
+// removedFromOurArray tendrá una cadena con valor Stimpson y ourArray tendrá ["J", ["cat"]].
+
+/* .unshift() No solo puedes desplazar (shift) elementos del comienzo de un arreglo, también puedes des-desplazar (unshift) 
+elementos al comienzo de un arreglo. Por ejemplo añadir elementos delante del arreglo.
+.unshift() funciona exactamente como .push(), pero en lugar de añadir el elemento al final del arreglo, unshift() 
+añade el elemento al principio del arreglo.*/
     
-    
-    
-    
+const ourArray = ["Stimpson", "J", "cat"];
+ourArray.shift();
+ourArray.unshift("Happy");
+
+// Después del shift, ourArray tendrá el valor ["J", "cat"]. Después del unshift, ourArray tendrá el valor ["Happy", "J", "cat"].    
     
     
     
