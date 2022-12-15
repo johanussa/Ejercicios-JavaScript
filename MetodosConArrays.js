@@ -16,6 +16,18 @@ const libreriasJS = ['react', 'redux', 'vue', 'D3', 'Chart'];
 const filtrarLibrerias = libreriasJS.filter((item) => item !== 'react');
 console.log(filtrarLibrerias); // [ 'redux', 'vue', 'D3', 'Chart' ]
 
+let productos = [
+    { nombre: 'TV Samsung', precio: 250, unidades: true },
+    { nombre: 'Watch Huawei', precio: 50, unidades: false },
+    { nombre: 'Computador HP', precio: 300, unidades: true },
+    { nombre: 'Tablet Lenovo', precio: 70, unidades: false },
+];
+
+let filtro = productos.filter(element => element.precio >= 50 && !element.unidades);
+console.log(filtro);
+let filtro2 = productos.filter(element => element.precio >= 50 && element.unidades);
+console.log(filtro2);
+
 /* .join() = Retorna una cadena que une todos los elementos por el separador 
     pasado por parametro */
     
@@ -78,6 +90,19 @@ let arrayNew = numeros.map(function(x) {
 });
 console.log(arrayNew);
 
+let productos = [
+    { nombre: 'TV Samsung', precio: 250 },
+    { nombre: 'Watch Huawei', precio: 50 },
+    { nombre: 'Computador HP', precio: 300 }
+];
+
+let addIVA = productos.map(element => ({ ...element, IVA: 0.19 }));
+let productsIVA = addIVA.map(element => element.precio * element.IVA);
+
+console.log(productos);
+console.log(addIVA);
+console.log(productsIVA);
+
 // .forEach() = No retorna otro array, itera sobre el array seleccionado en cada elemento u objeto, En este ejemplo
 // agregamos datos en un nuevo arreglo pero sin que se repita alguno de ellos 
 
@@ -137,10 +162,81 @@ ourArray.shift();
 ourArray.unshift("Happy");
 
 // Después del shift, ourArray tendrá el valor ["J", "cat"]. Después del unshift, ourArray tendrá el valor ["Happy", "J", "cat"].    
-    
-    
-    
-    
-    
-    
-    
+
+/* .reduce() = me permite reducir el arreglo a un solo valor de cualquier tipo, numerico o string o un objeto, recibe un callback
+ * como parametro y un valor que inicializa la variable contadora, el callback recibe dos parametros, uno con la variable que sirve como 
+ * varable contadora, y seguido de la variable que representa cada elemento del array, en este ejemplo se calcula el promedio de 
+ * numeros del array determinado. */ 
+
+let numeros = [ 1,2,3,6,2,3,1,5,4 ];
+let promedio = numeros.reduce((prom, numero) => prom + numero / numeros.length, 0);
+console.log(promedio); // 3
+
+let edades = [ 22, 23, 21, 19, 18, 21, 22, 23, 23, 19, 24, 21, 22 ];
+
+let contador = edades.reduce((acum, edad) => {	// Tambien podremos almacenar los datos en un objeto, en los [] creamos la propiedad
+    if (acum[edad]) { acum[edad] ++; }		// En el cual almacenamos el numero de la edad, y las veces que este se repite
+    else { acum[edad] = 1; }			// Si no esta almacenada la propiedad edad(valor iterado) se agrega, sino se aumenta su valor
+    return acum;
+}, {});		// { '18': 1, '19': 2, '21': 3, '22': 3, '23': 3, '24': 1 }
+
+let entries = Object.entries(contador);		// Transformamos el objeto en un array el cual podremos iterar 
+
+entries.forEach(e => {			// [ [ '18', 1 ], [ '19', 2 ], [ '21', 3 ], [ '22', 3 ], [ '23', 3 ], [ '24', 1 ] ]
+    let datos = `${e[0]} = `;		// Y mostramos en pantalla la cantidad de * correspondientes al valor de veces repetidas
+    for (let i = 0; i < e[1]; i++) {
+        datos += '* ';
+    }
+    console.log(datos);		// 18 = * 19 = * * 21 = * * * 22 = * * * 23 = * * * 24 = *  
+    datos = '';
+});
+
+let ventas = [
+    { nombre: 'Pantalon', precio: 15, ventas: 8 },
+    { nombre: 'Camisa', precio: 10, ventas: 14 },
+    { nombre: 'Vestido', precio: 35, ventas: 7 },
+    { nombre: 'Zapatillas', precio: 150, ventas: 3 }
+];
+let total = 0;
+let datos = ventas.reduce((acum, venta) => {
+    total += venta.precio * venta.ventas;
+    acum.Total = `$ ${total} Dollares`;
+    acum[venta.nombre] = `$ ${venta.precio * venta.ventas}`;
+    return acum;
+}, {});
+
+console.log(datos);	// { Total: '$ 955 Dollares', Pantalon: '$ 120', Camisa: '$ 140', Vestido: '$ 245', Zapatillas: '$ 450' }
+
+let estudiantes = [
+    { nombre: 'Johan', edad: 20, activo: true },
+    { nombre: 'Sebastian', edad: 28, activo: true },
+    { nombre: 'Laura', edad: 24, activo: false },
+    { nombre: 'Maria', edad: 42, activo: true },
+    { nombre: 'Omar', edad: 25, activo: false },
+];
+
+let data = estudiantes.reduce((acum, estud) => {
+    if (estud.activo) { acum.matriculado ++; }
+    else { acum.noMatriculado ++; }
+    return acum;			// NO OLVIDAR EL RETURN !!!
+}, { matriculado: 0, noMatriculado: 0 });
+
+console.log(data);	// { matriculado: 3, noMatriculado: 2 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
