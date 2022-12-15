@@ -64,18 +64,32 @@ console.log(index);  // Retorna -> 1
 person.splice(index, 1);
 console.log(person);
 
-/* .map() = Devuelve un nuevo array que contiene los resultados tras haber 
-    sido tratados por la funcion que se proporciona por parametro */
+/* .map() = Devuelve un nuevo array que contiene los resultados tras haber sido tratados por la funcion 
+    que se proporciona por parametro, funciona principalmente para modificar datos del arreglo */
+
+var numeros = [ 1,2,3,6,2,3,1,5,4 ];
+var estudiantes = ['Johan', 'Jhon', 'Sebastian', 'Maria', 'Laura'];
+
+let asistencia = estudiantes.map(e => ({ nombre: e, asistio: true }));
+console.log(asistencia);
+
+let arrayNew = numeros.map(function(x) {
+    return x * x;
+});
+console.log(arrayNew);
+
+// .forEach() = No retorna otro array, itera sobre el array seleccionado en cada elemento u objeto, En este ejemplo
+// agregamos datos en un nuevo arreglo pero sin que se repita alguno de ellos 
 
 var nums = [ 1,2,3,6,2,3,1,5,4 ];
 newA = [];
 
-nums.map((e) => {
-    if (newA.indexOf(e) == -1) {
+nums.forEach((e) => {
+    if (newA.indexOf(e) === -1) {
         newA.push(e);  // Agrega el elemento al final del array
     }
 });
-console.log(newA.sort()); // [ 1, 2, 3, 4, 5, 6 ]
+console.log(newA.sort((a, b) => a - b)); // [ 1, 2, 3, 4, 5, 6 ]
 
 // El metodo sort() nos ayuda a ordenar un arreglo, peros es algo torpe sin ayuda
 
