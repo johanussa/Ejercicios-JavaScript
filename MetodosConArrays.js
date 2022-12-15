@@ -50,8 +50,9 @@ var array3 = new Array("Pedro", "Pablo", "Pedro", "Perez", "Pedro");
 console.log(array3.lastIndexOf("Pedro")); // 4
 
 /*
-    .findIndex() = Retorna el indice del elemento que se esta buscando, pero este puede 
-    iterar objetos por lo que recibe un callback para realizar la busqueda
+    .findIndex() = Retorna el indice o posicion del elemento que se esta buscando, pero este puede 
+    iterar objetos por lo que recibe un callback para realizar la busqueda, sino encuentra el elemento este 
+    retorna el valor de -1
 */
 
 let person = [
@@ -223,9 +224,26 @@ let data = estudiantes.reduce((acum, estud) => {
 
 console.log(data);	// { matriculado: 3, noMatriculado: 2 }
 
+/* .some() = El busca un elemento que coincida con el argumento requerido y si encuentra al menos una coincidencia
+   este devuelve true, sino hay ninguna devuelve false */
 
+let some = estudiantes.some(e => e.edad < 18);
+console.log(some);	// false
+let some = estudiantes.some(e => e.edad === 25);
+console.log(some);	// true
 
+/* .every() = = a diferencia de some que sera verdadera si al menos encuentra una coincidencia, every sera true si 
+   todos los registros que se encuentran en el array cumplen con el argumento requerido */
 
+let every = estudiantes.every(e => e.edad > 18);   // Todos los registros son mayores a 18 años
+console.log(every);		// true
+
+/* .find() = Me permite buscar un elemento en el array que este necesitando, solo devuelve la primer coincidencia
+   si no encuentra el dato requerido, este retorna undifined, si quiero retornar todas las coincidencias, deberemos 
+   utilizar la funcion filter() que si devulve todos los valores que coincidan */
+
+let find = estudiantes.find(e => e.nombre === 'Maria');		// Buscar el dato con el nombre de 'Maria'
+console.log(find);		// { nombre: 'Maria', edad: 42, activo: true }
 
 
 
