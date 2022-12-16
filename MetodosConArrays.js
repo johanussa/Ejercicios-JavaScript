@@ -33,6 +33,17 @@ console.log(filtro2);
     
 console.log(array.join(" - ")); // Johan - Milena - Sebastian - Laura - Misael - Maria - Ana
 
+let showValues = (array, separador = ' - ') => {	// Este seria un ejemplo trabajando con objetos
+    let values = array.map(e => Object.values(e).join(separador));
+    console.log(Object.keys(array[0]).join(separador));
+    values.forEach(e => console.log(e));
+}
+showValues(productos);
+/*
+	 nombre - precio - unidades
+	TV Samsung - 250 - true
+*/
+
 /* .indexOf() = Retorna la primera posicion en la que aparezca el valor 
     proporcionado por parametro, si el resultado es infructuoso retorna -1 
     tiene un segundo parametro opcional que indica desde que posicion 
@@ -67,15 +78,20 @@ console.log(index);  // Retorna -> 1
 // para eso esta el metodo .splice() que me permite eliminar un registro en este caso
 
 /*
-    .splice() = Me permite eliminar un campo de un array u objeto Recibe dos parametros, 
-    el primero el indice del dato a eliminar, y el segundo la cantidad de registros que 
-    se eliminaran, en este caso solo 1
+    .splice() = Me permite eliminar o modificar un campo de un array u objeto este recibe dos parametros, 
+    el primero el indice del dato a eliminar o modificar, y el segundo la cantidad de registros que 
+    se eliminaran o modificaran, en este caso solo 1, si el elemento se va a modificar, recibe un tercer
+    parametro, el cual es el dato a ingresar en ese espacio
 */
 
 // Eliminar el registro con id = 1
-
 person.splice(index, 1);
 console.log(person);
+
+// Modificar un valor en un array
+let nombres = ['Johan', 'Laura', 'Esteban', 'Maria'];
+nombres.splice(index, 1, 'Milena');
+console.log(nombres);	// (4) ['Johan', 'Laura', 'Milena', 'Maria']
 
 /* .map() = Devuelve un nuevo array que contiene los resultados tras haber sido tratados por la funcion 
     que se proporciona por parametro, funciona principalmente para modificar datos del arreglo */
@@ -104,8 +120,8 @@ console.log(productos);
 console.log(addIVA);
 console.log(productsIVA);
 
-// .forEach() = No retorna otro array, itera sobre el array seleccionado en cada elemento u objeto, En este ejemplo
-// agregamos datos en un nuevo arreglo pero sin que se repita alguno de ellos 
+/* .forEach() = No retorna otro array, itera sobre el array seleccionado en cada elemento u objeto, En este ejemplo
+   agregamos datos en un nuevo arreglo pero sin que se repita alguno de ellos */
 
 var nums = [ 1,2,3,6,2,3,1,5,4 ];
 newA = [];
@@ -117,7 +133,7 @@ nums.forEach((e) => {
 });
 console.log(newA.sort((a, b) => a - b)); // [ 1, 2, 3, 4, 5, 6 ]
 
-// El metodo sort() nos ayuda a ordenar un arreglo, peros es algo torpe sin ayuda
+// .sort() = El metodo sort() nos ayuda a ordenar un arreglo, peros es algo torpe sin ayuda
 
 var a = new Array(13, 43, 200, 3, 1);  // Se declara un array en desorden
 var fnSort = function(a, b) { return a - b; }  	// Esta funcion le permite al metodo 
@@ -154,9 +170,9 @@ const removedFromOurArray = ourArray.shift();
 // removedFromOurArray tendrá una cadena con valor Stimpson y ourArray tendrá ["J", ["cat"]].
 
 /* .unshift() No solo puedes desplazar (shift) elementos del comienzo de un arreglo, también puedes des-desplazar (unshift) 
-elementos al comienzo de un arreglo. Por ejemplo añadir elementos delante del arreglo.
-.unshift() funciona exactamente como .push(), pero en lugar de añadir el elemento al final del arreglo, unshift() 
-añade el elemento al principio del arreglo.*/
+   elementos al comienzo de un arreglo. Por ejemplo añadir elementos delante del arreglo.
+   .unshift() funciona exactamente como .push(), pero en lugar de añadir el elemento al final del arreglo, unshift() 
+   añade el elemento al principio del arreglo.*/
     
 const ourArray = ["Stimpson", "J", "cat"];
 ourArray.shift();
@@ -169,7 +185,7 @@ ourArray.unshift("Happy");
  * varable contadora, y seguido de la variable que representa cada elemento del array, en este ejemplo se calcula el promedio de 
  * numeros del array determinado. */ 
 
-let numeros = [ 1,2,3,6,2,3,1,5,4 ];
+let numeros = [ 1,2,3,6,2,3,1,5,4 ];	// Promedio de los numeros del array
 let promedio = numeros.reduce((prom, numero) => prom + numero / numeros.length, 0);
 console.log(promedio); // 3
 
@@ -245,16 +261,48 @@ console.log(every);		// true
 let find = estudiantes.find(e => e.nombre === 'Maria');		// Buscar el dato con el nombre de 'Maria'
 console.log(find);		// { nombre: 'Maria', edad: 42, activo: true }
 
+/* .includes() = nos sirve para determinar si en el areglo hay un elemento en especifico retornando true or false 
+   recibe como parametro el valor especifico a buscar, tambien podemos evaluar partes de cadenas de texto */
 
+let mascotas = ['perro', 'gato', 'pez', 'conejo'];
+let res = mascotas.includes('gato');
+console.log(res);	// true
 
+let palabra = 'computador';
+let res = palabra.includes('a');
+console.log(res);	// true
 
+let res = palabra.includes('h');
+console.log(res);	//false
 
+// Este metodo es sensible a mayusculas y minusculas por tanto 'j' es diferente de 'J'
 
+let data = [
+    { nombre: 'Johan', edad: 25, programa: 'software' },
+    { nombre: 'Sebasian', edad: 54, programa: 'sistemas' },
+    { nombre: 'Diana', edad: 20, programa: 'soldadura' },
+    { nombre: 'Laura', edad: 24, programa: 'software' },
+    { nombre: 'Maria', edad: 28, programa: 'sistemas' },
+];
+let filter = (word) => {
+    return data.filter(e => e.nombre.includes(word));
+    // return data.filter(e => e.nombre.toLowerCase().includes(word.toLowerCase()));
+    // convierte la palabra en minuscula para ser comparada tambien la otra en minuscula
+}
+let res = filter('ana');
+console.log(res);	// { nombre: 'Diana', edad: 20, programa: 'soldadura' }
 
+/* .concat() = Este método me permite concatenar dos arreglos */
 
+let array1 = [1, 2, 3, 4, 5];
+let array2 = [6, 7, 8, 9, 0];
 
+let arrayFinal = array1.concat(array2);
+console.log(arrayFinal);	// (10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 
-
+// Tambien podemos utilizar el spread operator para concatenar arrays 
+let array3 = [...array1, ...array2];
+console.log(array3);	// (10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 0] y da el mismo resultado
 
 
 
