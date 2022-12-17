@@ -35,14 +35,10 @@ console.log(array.join(" - ")); // Johan - Milena - Sebastian - Laura - Misael -
 
 let showValues = (array, separador = ' - ') => {	// Este seria un ejemplo trabajando con objetos
     let values = array.map(e => Object.values(e).join(separador));
-    console.log(Object.keys(array[0]).join(separador));
-    values.forEach(e => console.log(e));
+    console.log(Object.keys(array[0]).join(separador));	  // nombre - precio - unidades
+    values.forEach(e => console.log(e));	// TV Samsung - 250 - true ...
 }
 showValues(productos);
-/*
-	 nombre - precio - unidades
-	TV Samsung - 250 - true
-*/
 
 /* .indexOf() = Retorna la primera posicion en la que aparezca el valor 
     proporcionado por parametro, si el resultado es infructuoso retorna -1 
@@ -304,5 +300,11 @@ console.log(arrayFinal);	// (10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 let array3 = [...array1, ...array2];
 console.log(array3);	// (10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 0] y da el mismo resultado
 
+/* .slice() = Este método permite retorna una copia parcial o completa de otro array, retorna un array nuevo
+   recibe dos parametros, el primero indica desde donde quiere comenzar a pasar elementos, y el segundo es la 
+   posicion final de hasta donde se quiere cortar y NO incluye esa posicion va hasta n - 1, No modifica el array original */
 
+let estudiantes = [ 'Johan', 'Sandra', 'Mauricio', 'Javier', 'William', 'Laura', 'Lorena' ];
+let copia = estudiantes.slice(2, 4);
+console.log(copia);	// [ 'Mauricio', 'Javier' ]
 
