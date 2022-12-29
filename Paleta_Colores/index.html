@@ -10,13 +10,18 @@
 <body>
     <div class="content">
         <header>
-            <h1>Paleta de Colores</h1>
+            <h1 id="title">Paleta de Colores</h1>
         </header>
         <section>
             <div id="container">
                 <h2 id="valueColor"></h2>
             </div>
             <input type="color" id="colorPal">
+            <button id="saveColor">Guardar Color</button>
+        </section>
+        <section class="showColors">
+            <h2>Colores Guardados: <span id="cantColors">0</span></h2>
+            <ul id="ulColors"></ul>
         </section>
     </div>
     <script src="./script.js"></script>
