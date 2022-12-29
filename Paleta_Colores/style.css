@@ -8,15 +8,45 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    text-shadow: 1px 1px 10px black;
+    text-shadow: 0px 0px 20px black;
+}
+.content {
+    width: 1000px;
 }
 #container {
-    width: 400px;
+    max-width: 600px;
     height: 300px;
-    border: 1px solid black;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
     box-shadow: 0px 0px 10px black;
+    border: 1px solid white;
+}
+#saveColor {
+    padding: 4px;
+    width: 120px;
+    font-weight: 600;
+    vertical-align: top;
+}
+#saveColor:hover { cursor: pointer;  }
+.showColors { max-width: 550px; margin: auto; }
+.showColors ul {
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    list-style: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0px 0px 10px black;
+}
+.showColors li {
+    width: 100px;
+    margin: 5px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    font-weight: 600;
 }
