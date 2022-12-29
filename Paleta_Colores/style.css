@@ -1,0 +1,22 @@
+body {
+    background: linear-gradient(to right, rgb(255, 169, 186), rgb(179, 231, 255));
+    height: 98vh;
+    box-sizing: border-box;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px 10px black;
+}
+#container {
+    width: 400px;
+    height: 300px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px black;
+}
