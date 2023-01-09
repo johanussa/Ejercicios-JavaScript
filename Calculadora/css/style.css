@@ -30,7 +30,7 @@ section.container {
     border-radius: 20px;
     border: 10px solid rgba(0, 100, 58, 0.5);
     text-align: right;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     overflow: auto;
     display: flex;
     flex-direction: column;
@@ -60,4 +60,4 @@ section.container {
 #btns button:active { background-color: #006850; }
 #btns button:focus { outline: none; }
 .col-2 { grid-column: span 2; }
-#value { font-size: 2.5rem; }
+#value { font-size: 2.2rem; }
