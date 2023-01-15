@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Fomulario</title>
+  </head>
+  <body>
+    <section class="container">
+      <form action="" class="formulario" id="formulario">
+        <section class="form_group" id="group_user">
+          <label for="user" class="form_label">Usuario</label>
+          <div class="group_input">
+            <input
+              type="text"
+              name="user"
+              id="user"
+              class="form_input"
+              placeholder="Usuario"
+            />
+            <i class="bi bi-x-circle-fill icon_validate"></i>
+          </div>
+          <p class="input_error">
+            El Usuario debe tener entre 4 y 16 caracteres, y solo puede contener
+            numeros, letras y guion bajo, SIN espacios
+          </p>
+        </section>
+
+        <section class="form_group" id="group_name">
+          <label for="name" class="form_label">Nombre</label>
+          <div class="group_input">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form_input"
+              placeholder="Nombre"
+            />
+            <i class="bi bi-x-circle-fill icon_validate"></i>
+          </div>
+          <p class="input_error">
+            El Usuario debe tener entre 4 y 16 caracteres y no debe tener números
+          </p>
+        </section>
+
+        <section class="form_group" id="group_password">
+          <label for="password" class="form_label">Contraseña</label>
+          <div class="group_input">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="form_input"
+              placeholder="Contraseña"
+            />
+            <i class="bi bi-x-circle-fill icon_validate"></i>
+          </div>
+          <p class="input_error">
+            La contraseña debe tener entre 4 y 12 caracteres
+          </p>
+        </section>
+
+        <section class="form_group" id="group_pass2">
+          <label for="password2" class="form_label">Confirmar Contraseña</label>
+          <div class="group_input">
+            <input
+              type="password"
+              name="password2"
+              id="password2"
+              class="form_input"
+              placeholder="Confirma la contraseña"
+            />
+            <i class="bi bi-x-circle-fill icon_validate"></i>
+          </div>
+          <p class="input_error">La contraseña No coincide</p>
+        </section>
+
+        <section class="form_group" id="group_email">
+          <label for="email" class="form_label">Correo Electrónico</label>
+          <div class="group_input">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="form_input"
+              placeholder="correo@misena.edu.co"
+            />
+            <i class="bi bi-x-circle-fill icon_validate"></i>
+          </div>
+          <p class="input_error">El Correo debe ser de dominio sena</p>
+        </section>
+
+        <section class="form_group" id="group_phone">
+          <label for="phone" class="form_label">Teléfono</label>
+          <div class="group_input">
+            <input
+              type="number"
+              name="phone"
+              id="phone"
+              class="form_input"
+              placeholder="Ingrese Número de Teléfono"
+            />
+            <i class="bi bi-x-circle-fill icon_validate"></i>
+          </div>
+          <p class="input_error">
+            El Número de Teléfono debe tener maximo 14 dígitos
+          </p>
+        </section>
+
+        <section class="form_group form_terminos">
+          <label class="form_label">
+            <input
+              class="form_terminos"
+              type="checkbox"
+              name="terminos"
+              id="terminos"
+            />
+            Aceptar Terminos y Condiciones
+          </label>
+        </section>
+
+        <section class="form_message" id="form_message">
+          <div>
+            <i class="bi bi-exclamation-diamond"></i>
+            <b>Error : </b> Debe completar todos los espacios requeridos
+          </div>
+        </section>
+
+        <section class="form_group form_btn">
+          <button type="submit" class="btn_send">ENVIAR</button>
+          <p class="form_message_ok" id="form_message_ok">
+            Formulario Enviado Exitosamente
+          </p>
+        </section>
+      </form><br>
+    </section>
+    <script src="./script.js"></script>
+  </body>
+</html>
