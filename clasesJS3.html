@@ -16,130 +16,138 @@
     </style>
 </head>
 <body>
+    <div class="contenido"></div>
     <script>
-        'use strict';
+        "use strict";
+
         class DispoEntrada {
-            constructor(tipoEntrada, marca) {
-                this._tipoEntrada = tipoEntrada;
-                this._marca = marca;
-            }
-            get tipoEntrada() { return this._tipoEntrada; }
-            set tipoEntrada(tipoEntrada) { this._tipoEntrada = tipoEntrada; }
-            get marca() { return this._marca; }
-            set marca(marca) { this._marca = marca; }
-            toString() {
-                return {
-                    TipoEntrada: this._tipoEntrada,
-                    Marca: this._marca
-                }
-            }
+          constructor(tipoEntrada, marca) {
+            this._tipoEntrada = tipoEntrada;
+            this._marca = marca;
+          }
+          get tipoEntrada() { return this._tipoEntrada; }
+          set tipoEntrada(tipoEntrada) { this._tipoEntrada = tipoEntrada; }
+          get marca() { return this._marca; }
+          set marca(marca) { this._marca = marca; }
+
+          toString() {
+            return {
+              TipoEntrada: this._tipoEntrada,
+              Marca: this._marca,
+            };
+          }
         }
         class Raton extends DispoEntrada {
-            static contador = 0;
-            constructor(tipoEntrada, marca) {
-                super(tipoEntrada, marca);
-                this._Id = ++ Raton.contador;
-            }
-            get id() { return this._Id; }
-            toString() {
-                let data = {
-                    Id_Raton : this._Id,
-                    ...super.toString()
-                } 
-                return data;
-            }
+          static contador = 0;
+          constructor(tipoEntrada, marca) {
+            super(tipoEntrada, marca);
+            this._Id = ++ Raton.contador;
+          }
+          get id() { return this._Id; }
+
+          toString() {
+            return {
+              Id_Raton: this._Id,
+              ...super.toString(),
+            };
+          }
         }
         class Teclado extends DispoEntrada {
-            static contador = 0;
-            constructor(tipoEntrada, marca) {
-                super(tipoEntrada, marca);
-                this._Id = ++ Teclado.contador;
-            }
-            get id() { return this._Id; }
-            toString() {
-                let data = { 
-                    Id_Teclado : this._Id,
-                    ...super.toString()
-                }
-                return data;
-            }
+          static contador = 0;
+          constructor(tipoEntrada, marca) {
+            super(tipoEntrada, marca);
+            this._Id = ++ Teclado.contador;
+          }
+          get id() { return this._Id; }
+
+          toString() {
+            return {
+              Id_Teclado: this._Id,
+              ...super.toString(),
+            };
+          }
         }
         class Monitor {
-            static contador = 0;
-            constructor(marca, size) {
-                this._Id = ++ Monitor.contador;
-                this._marca = marca;
-                this._size = size;
-            }
-            get id() { return this._Id; }
-            get marca() { return this._marca; }
-            set marca(marca) { this._marca = marca; }
-            get size() { return this._size; }
-            set size(size) { this._size = size; }
-            toString() {
-                return {
-                    Id_Monitor: this._Id,
-                    Marca: this._marca,
-                    Tamaño: this._size
-                }
-            }
+          static contador = 0;
+          constructor(marca, size) {
+            this._Id = ++ Monitor.contador;
+            this._marca = marca;
+            this._size = size;
+          }
+          get id() { return this._Id; }
+          get marca() { return this._marca; }
+          set marca(marca) { this._marca = marca; }
+          get size() { return this._size; }
+          set size(size) { this._size = size; }
+
+          toString() {
+            return {
+              Id_Monitor: this._Id,
+              Marca: this._marca,
+              Tamaño: this._size,
+            };
+          }
         }
         class Computadora {
-            static contador = 0;
-            constructor(nombre, monitor, teclado, raton) {
-                this._Id = ++ Computadora.contador;
-                this._nombre = nombre;
-                this._monitor = monitor;
-                this._teclado = teclado;
-                this._raton = raton;
-            }
-            get id() { return this._Id; }
-            get nombre() { return this._nombre; }
-            set nombre(nombre) { this._nombre = nombre; }
-            get monitor() { return this._monitor; }
-            set monitor(monitor) { this._monitor = monitor; }
-            get teclado() { return this._teclado; }
-            set teclado(teclado) { this._teclado = teclado; }
-            toString() {
-                return {
-                    ID_Computador: this._Id,
-                    Nombre: this._nombre,
-                    Monitor: this._monitor,
-                    Teclado: this._teclado,
-                    Raton: this._raton
-                }
-            }
+          static contador = 0;
+          constructor(nombre, monitor, teclado, raton) {
+            this._Id = ++ Computadora.contador;
+            this._nombre = nombre;
+            this._monitor = monitor;
+            this._teclado = teclado;
+            this._raton = raton;
+          }
+          get id() { return this._Id; }
+          get nombre() { return this._nombre; }
+          set nombre(nombre) { this._nombre = nombre; }
+          get monitor() { return this._monitor; }
+          set monitor(monitor) { this._monitor = monitor; }
+          get teclado() { return this._teclado; }
+          set teclado(teclado) { this._teclado = teclado; }
+
+          toString() {
+            return {
+              ID_Computador: this._Id,
+              Nombre: this._nombre,
+              Monitor: this._monitor,
+              Teclado: this._teclado,
+              Raton: this._raton,
+            };
+          }
         }
         class Orden {
-            static contador = 0;
-            constructor() {
-                this._Id = ++ Orden.contador;
-                this._computers = [];
-            }
-            get id() { return this._Id; }
-            get computers() { return this._computers; }
-            addComputer(computer) { this._computers.push(computer); }
-            toString() {
-                return {
-                    Id_Orden: this._Id,
-                    Computadoras: this._computers
-                }
-            }
+          static contador = 0;
+          constructor() {
+            this._Id = ++ Orden.contador;
+            this._computers = [];
+          }
+          get id() { return this._Id; }
+          get computers() { return this._computers; }
+          addComputer(computer) { this._computers.push(computer); }
+
+          toString() {
+            return {
+              Id_Orden: this._Id,
+              Computadoras: this._computers,
+            };
+          }
         }
-        const dispoEnt1 = new DispoEntrada('USB', 'Lenovo');
-        const raton1 = new Raton('Bluetooth', 'MSI');
-        const raton2 = new Raton('USB', 'DELL');
-        const tecla1 = new Teclado('USB', 'Genius');
-        const tecla2 = new Teclado('Bluetooth', 'ACER');
-        const monitor1 = new Monitor('HP', '25P');
-        const monitor2 = new Monitor('DELL', '27P');
-        const compu1 = new Computadora('Hewlett Packard', monitor1, tecla1, raton1);
-        const compu2 = new Computadora('Armada', monitor2, tecla2, raton2);
-        const compu3 = new Computadora('Armada', monitor2, tecla2, raton2);
-        const compu4 = new Computadora('Armada', monitor2, tecla2, raton2);
+
+        const dispoEnt1 = new DispoEntrada("USB", "Lenovo");
+        const raton1 = new Raton("Bluetooth", "MSI");
+        const raton2 = new Raton("USB", "DELL");
+        const tecla1 = new Teclado("USB", "Genius");
+        const tecla2 = new Teclado("Bluetooth", "ACER");
+        const monitor1 = new Monitor("HP", "25P");
+        const monitor2 = new Monitor("DELL", "27P");
+        const compu1 = new Computadora("Hewlett Packard", monitor1, tecla1, raton1);
+        const compu2 = new Computadora("Armada", monitor2, tecla2, raton2);
+        const compu3 = new Computadora("Lenovo", monitor2, tecla2, raton2);
+        const compu4 = new Computadora("Dell", monitor2, tecla2, raton2);
         const orden1 = new Orden();
         const orden2 = new Orden();
-        
+        const orden3 = new Orden();
+
         orden1.addComputer(compu1);
         orden1.addComputer(compu2);
         orden2.addComputer(compu1);
@@ -153,68 +161,42 @@
 
         showData(orden1);
         showData(orden2);
+        showData(orden3);
+        showData(orden1);
 
         function showData(object) {
-            document.write(`<hr>> Numero de Orden: ${object.toString().Id_Orden} <hr>`);
-            let ul = document.createElement('ul');
-            document.body.append(ul);
-            object.toString().Computadoras.forEach(e => {
-                let li = document.createElement('li');
-                li.innerText = `Id Computador: ${e._Id}`;
-                ul.append(li);
-                li = document.createElement('li');
-                li.innerText = `Marca: ${e._nombre}`;
-                ul.append(li);
-    
-                li = document.createElement('li');
-                li.innerText = `Monitor:`;
-                ul.append(li);
-                let ul2 = document.createElement('ul');
-                ul.append(ul2);
-                li = document.createElement('li');
-                li.innerText = `Id Computador: ${e._monitor._Id}`;
-                ul2.append(li);
-                li = document.createElement('li');
-                li.innerText = `Id Computador: ${e._monitor._marca}`;
-                ul2.append(li);
-                li = document.createElement('li');
-                li.innerText = `Id Computador: ${e._monitor._size}`;
-                ul2.append(li);
-    
-                li = document.createElement('li');
-                li.innerText = `Teclado:`;
-                ul.append(li);            
-                let ul3 = document.createElement('ul');
-                ul.append(ul3);
-                li = document.createElement('li');
-                li.innerText = `Id Computador: ${e._teclado._Id}`;
-                ul3.append(li);
-                li = document.createElement('li');
-                li.innerText = `Id Computador: ${e._teclado._marca}`;
-                ul3.append(li);
-                li = document.createElement('li');
-                li.innerText = `Id Computador: ${e._teclado._tipoEntrada}`;
-                ul3.append(li);
-    
-                li = document.createElement('li');
-                li.innerText = `Raton:`;
-                ul.append(li); 
-                let ul4 = document.createElement('ul');
-                ul.append(ul4);
-                li = document.createElement('li');
-                li.innerText = `Id Computador: ${e._raton._Id}`;
-                ul4.append(li);
-                li = document.createElement('li');
-                li.innerText = `Id Computador: ${e._raton._marca}`;
-                ul4.append(li);
-                li = document.createElement('li');
-                li.innerText = `Id Computador: ${e._raton._tipoEntrada}`;
-                ul4.append(li);
-    
-                const br = document.createElement('br');
-                ul.append(br);
+          const content = document.querySelector(".contenido");
+          content.innerHTML += `<hr> <h3>> Numero de Orden: ${object.toString().Id_Orden}</h3> <hr>`;
+          if (object.toString().Computadoras.length) {
+            object.toString().Computadoras.forEach((e) => {
+              content.innerHTML += `
+                <ul>
+                  <li>Id Computador: ${e._Id}</li>
+                  <li>Marca: ${e._nombre}</li>
+                  <li>Monitor: </li>
+                  <ul>
+                    <li>ID Monitor: ${e._monitor._Id}</li>
+                    <li>Marca: ${e._monitor._marca}</li>
+                    <li>Tamaño: ${e._monitor._size}</li>
+                  </ul>
+                  <li>Teclado: </li>
+                  <ul>
+                    <li>ID Teclado: ${e._teclado._Id}</li>
+                    <li>Marca: ${e._teclado._marca}</li>
+                    <li>Tipo Entrada: ${e._teclado._tipoEntrada}</li>
+                  </ul>
+                  <li>Raton: </li>
+                  <ul>
+                    <li>ID Raton: ${e._raton._Id}</li>
+                    <li>Marca: ${e._raton._marca}</li>
+                    <li>Tipo Entrada: ${e._raton._tipoEntrada}</li>
+                  </ul>
+                </ul><hr/>`;
             });
-        }      
+          } else {
+            content.innerHTML += `<h3>Aún No se han ingresado datos a ésta Orden</h3><hr/>`;
+          }
+        }
     </script>
 </body>
 </html>
